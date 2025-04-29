@@ -1,12 +1,20 @@
-# React + Vite
+1. Clone the repository → `git clone https://github.com/your-username/your-repo-name.git && cd your-repo-name`  
+2. Install dependencies → `npm install` *(or `yarn`)*  
+3. Start development server → `npm run dev` *(for Vite)* or `npm start` *(for Create React App)*  
+4. Build for production → `npm run build`  
+5. Tailwind CSS is pre-configured in `tailwind.config.js`, `postcss.config.js`, and imported in `src/index.css`  
+6. Ensure Node.js v14+ is installed → check with `node -v`  
+7. Customize UI using Tailwind classes directly in JSX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Logic Used
+`useState`
+- Manages local state for notes, form input, and optionally edit mode.
+- **Why:** Enables dynamic updates to UI based on user interaction.
 
-Currently, two official plugins are available:
+`useEffect`
+- Retrieves and saves notes to `localStorage`.
+- **Why:** Ensures data persistence across browser refreshes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`localStorage`
+- Used to store the notes array locally in the user's browser.
+- **Why:** Lightweight method for persistence without needing a backend
